@@ -1,0 +1,490 @@
+# I have adjusted the output file with and separated the individual questions and outputs with blank lines for better visualization
+
+#1
+
+Script started on 2021-04-17 22:50:17-07:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="108" LINES="30"]
+]0;root@MarceloUW: /mnt/c/Users/marce/520-Assignments/hw_1root@MarceloUW:/mnt/c/Users/marce/520-Assignments/hw_1# echo Hello world
+Hello world
+
+#2
+
+]0;root@MarceloUW: /mnt/c/Users/marce/520-Assignments/hw_1root@MarceloUW:/mnt/c/Users/marce/520-Assignments/hw_1# date
+Sat Apr 17 22:50:31 PDT 2021
+
+#3&4: I was using PowerShell and $HOME did not work, so I tried to reach my home directory in a different way...
+
+]0;root@MarceloUW: /mnt/c/Users/marce/520-Assignments/hw_1root@MarceloUW:/mnt/c/Users/marce/520-Assignments/hw_1# cd ~/marce
+bash: cd: /root/marce: No such file or directory
+]0;root@MarceloUW: /mnt/c/Users/marce/520-Assignments/hw_1root@MarceloUW:/mnt/c/Users/marce/520-Assignments/hw_1# cd..[K[K ..
+]0;root@MarceloUW: /mnt/c/Users/marce/520-Assignmentsroot@MarceloUW:/mnt/c/Users/marce/520-Assignments# cd..[K[K ..
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# pwd
+/mnt/c/Users/marce
+
+#5
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# k[Kls -la
+total 4212
+drwxrwxrwx 1 root root     512 Apr 17 22:23  [0m[34;42m.[0m
+dr-xr-xr-x 1 root root     512 Apr 16 21:30  [01;34m..[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.aws[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.azure[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:41  [34;42m.bridge[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:32  [34;42m.docker[0m
+-rwxrwxrwx 1 root root      53 Apr 16 22:39  [01;32m.git-for-windows-updater[0m
+-rwxrwxrwx 1 root root      51 Apr 17 17:49  [01;32m.gitconfig[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.minikube[0m
+-rwxrwxrwx 1 root root    1133 Apr 17 18:53  [01;32m.viminfo[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.vs-kubernetes[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:38  [34;42m.vscode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'3D Objects'[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:01  [34;42m520-Assignments[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:08  [34;42mAppData[0m
+lrwxrwxrwx 1 root root      34 Apr 16 21:08 [01;36m'Application Data'[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:48  [34;42mCode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mContacts[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mCookies[0m -> [34;42m/mnt/c/Users/marce/AppData/Local/Microsoft/Windows/INetCookies[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:15  [34;42mDocuments[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:26  [34;42mDownloads[0m
+drwxrwxrwx 1 root root     512 Apr 16 22:49  [34;42mEEP_520_Spring2021[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mFavorites[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:14  [34;42mIntelGraphicsProfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mLinks[0m
+lrwxrwxrwx 1 root root      32 Apr 16 21:08 [01;36m'Local Settings'[0m -> [34;42m/mnt/c/Users/marce/AppData/Local[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mMusic[0m
+lrwxrwxrwx 1 root root      28 Apr 16 21:08 [01;36m'My Documents'[0m -> [34;42m/mnt/c/Users/marce/Documents[0m
+-rwxrwxrwx 1 root root 2097152 Apr 16 23:14  [01;32mNTUSER.DAT[0m
+-rwxrwxrwx 1 root root   65536 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TM.blf[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000001.regtrans-ms[0m[K
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000002.regtrans-ms[0m[K
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mNetHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Network Shortcuts'[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:15  [34;42mOneDrive[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mPrintHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mRecent[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Recent[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'Saved Games'[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:14  [34;42mSearches[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mSendTo[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/SendTo[0m
+lrwxrwxrwx 1 root root      63 Apr 16 21:08 [01;36m'Start Menu'[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Start Menu'[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mTemplates[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Templates[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mVideos[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:21  [34;42mgetting-started[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mntuser.dat.LOG1[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG2[0m
+-rwxrwxrwx 1 root root      20 Apr 16 21:08  [01;32mntuser.ini[0m
+-rwxrwxrwx 1 root root     262 Apr 17 22:23  [01;32mtypescript[0m
+
+#6
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# mkdir temp
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# ls -la
+total 4212
+drwxrwxrwx 1 root root     512 Apr 17 22:52  [0m[34;42m.[0m
+dr-xr-xr-x 1 root root     512 Apr 16 21:30  [01;34m..[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.aws[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.azure[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:41  [34;42m.bridge[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:32  [34;42m.docker[0m
+-rwxrwxrwx 1 root root      53 Apr 16 22:39  [01;32m.git-for-windows-updater[0m
+-rwxrwxrwx 1 root root      51 Apr 17 17:49  [01;32m.gitconfig[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.minikube[0m
+-rwxrwxrwx 1 root root    1133 Apr 17 18:53  [01;32m.viminfo[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.vs-kubernetes[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:38  [34;42m.vscode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'3D Objects'[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:01  [34;42m520-Assignments[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:08  [34;42mAppData[0m
+lrwxrwxrwx 1 root root      34 Apr 16 21:08 [01;36m'Application Data'[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:48  [34;42mCode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mContacts[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mCookies[0m -> [34;42m/mnt/c/Users/marce/AppData/Local/Microsoft/Windows/INetCookies[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:15  [34;42mDocuments[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:26  [34;42mDownloads[0m
+drwxrwxrwx 1 root root     512 Apr 16 22:49  [34;42mEEP_520_Spring2021[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mFavorites[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:14  [34;42mIntelGraphicsProfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mLinks[0m
+lrwxrwxrwx 1 root root      32 Apr 16 21:08 [01;36m'Local Settings'[0m -> [34;42m/mnt/c/Users/marce/AppData/Local[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mMusic[0m
+lrwxrwxrwx 1 root root      28 Apr 16 21:08 [01;36m'My Documents'[0m -> [34;42m/mnt/c/Users/marce/Documents[0m
+-rwxrwxrwx 1 root root 2097152 Apr 16 23:14  [01;32mNTUSER.DAT[0m
+-rwxrwxrwx 1 root root   65536 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TM.blf[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000001.regtrans-ms[0m[K
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000002.regtrans-ms[0m[K
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mNetHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Network Shortcuts'[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:15  [34;42mOneDrive[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mPrintHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mRecent[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Recent[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'Saved Games'[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:14  [34;42mSearches[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mSendTo[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/SendTo[0m
+lrwxrwxrwx 1 root root      63 Apr 16 21:08 [01;36m'Start Menu'[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Start Menu'[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mTemplates[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Templates[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mVideos[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:21  [34;42mgetting-started[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mntuser.dat.LOG1[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG2[0m
+-rwxrwxrwx 1 root root      20 Apr 16 21:08  [01;32mntuser.ini[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:52  [34;42mtemp[0m
+-rwxrwxrwx 1 root root     262 Apr 17 22:23  [01;32mtypescript[0m
+
+#7
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# mv temp files
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# ls -la
+total 4212
+drwxrwxrwx 1 root root     512 Apr 17 22:53  [0m[34;42m.[0m
+dr-xr-xr-x 1 root root     512 Apr 16 21:30  [01;34m..[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.aws[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.azure[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:41  [34;42m.bridge[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:32  [34;42m.docker[0m
+-rwxrwxrwx 1 root root      53 Apr 16 22:39  [01;32m.git-for-windows-updater[0m
+-rwxrwxrwx 1 root root      51 Apr 17 17:49  [01;32m.gitconfig[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.minikube[0m
+-rwxrwxrwx 1 root root    1133 Apr 17 18:53  [01;32m.viminfo[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.vs-kubernetes[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:38  [34;42m.vscode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'3D Objects'[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:01  [34;42m520-Assignments[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:08  [34;42mAppData[0m
+lrwxrwxrwx 1 root root      34 Apr 16 21:08 [01;36m'Application Data'[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:48  [34;42mCode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mContacts[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mCookies[0m -> [34;42m/mnt/c/Users/marce/AppData/Local/Microsoft/Windows/INetCookies[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:15  [34;42mDocuments[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:26  [34;42mDownloads[0m
+drwxrwxrwx 1 root root     512 Apr 16 22:49  [34;42mEEP_520_Spring2021[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mFavorites[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:14  [34;42mIntelGraphicsProfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mLinks[0m
+lrwxrwxrwx 1 root root      32 Apr 16 21:08 [01;36m'Local Settings'[0m -> [34;42m/mnt/c/Users/marce/AppData/Local[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mMusic[0m
+lrwxrwxrwx 1 root root      28 Apr 16 21:08 [01;36m'My Documents'[0m -> [34;42m/mnt/c/Users/marce/Documents[0m
+-rwxrwxrwx 1 root root 2097152 Apr 16 23:14  [01;32mNTUSER.DAT[0m
+-rwxrwxrwx 1 root root   65536 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TM.blf[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000001.regtrans-ms[0m[K
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000002.regtrans-ms[0m[K
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mNetHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Network Shortcuts'[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:15  [34;42mOneDrive[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mPrintHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mRecent[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Recent[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'Saved Games'[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:14  [34;42mSearches[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mSendTo[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/SendTo[0m
+lrwxrwxrwx 1 root root      63 Apr 16 21:08 [01;36m'Start Menu'[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Start Menu'[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mTemplates[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Templates[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mVideos[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:52  [34;42mfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:21  [34;42mgetting-started[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mntuser.dat.LOG1[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG2[0m
+-rwxrwxrwx 1 root root      20 Apr 16 21:08  [01;32mntuser.ini[0m
+-rwxrwxrwx 1 root root     262 Apr 17 22:23  [01;32mtypescript[0m
+
+#8
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# cd files
+
+#9
+
+]0;root@MarceloUW: /mnt/c/Users/marce/filesroot@MarceloUW:/mnt/c/Users/marce/files# touch temp
+]0;root@MarceloUW: /mnt/c/Users/marce/filesroot@MarceloUW:/mnt/c/Users/marce/files# ls -la
+total 0
+drwxrwxrwx 1 root root 512 Apr 17 22:55 [0m[34;42m.[0m
+drwxrwxrwx 1 root root 512 Apr 17 22:53 [34;42m..[0m
+-rwxrwxrwx 1 root root   0 Apr 17 22:55 [01;32mtemp[0m
+
+#10
+
+]0;root@MarceloUW: /mnt/c/Users/marce/filesroot@MarceloUW:/mnt/c/Users/marce/files# mv temp test
+]0;root@MarceloUW: /mnt/c/Users/marce/filesroot@MarceloUW:/mnt/c/Users/marce/files# ls -la
+total 0
+drwxrwxrwx 1 root root 512 Apr 17 22:55 [0m[34;42m.[0m
+drwxrwxrwx 1 root root 512 Apr 17 22:53 [34;42m..[0m
+-rwxrwxrwx 1 root root   0 Apr 17 22:55 [01;32mtest[0m
+
+#11
+
+]0;root@MarceloUW: /mnt/c/Users/marce/filesroot@MarceloUW:/mnt/c/Users/marce/files# cd ..
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# ls -la
+total 4212
+drwxrwxrwx 1 root root     512 Apr 17 22:53  [0m[34;42m.[0m
+dr-xr-xr-x 1 root root     512 Apr 16 21:30  [01;34m..[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.aws[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.azure[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:41  [34;42m.bridge[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:32  [34;42m.docker[0m
+-rwxrwxrwx 1 root root      53 Apr 16 22:39  [01;32m.git-for-windows-updater[0m
+-rwxrwxrwx 1 root root      51 Apr 17 17:49  [01;32m.gitconfig[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.minikube[0m
+-rwxrwxrwx 1 root root    1133 Apr 17 18:53  [01;32m.viminfo[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.vs-kubernetes[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:38  [34;42m.vscode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'3D Objects'[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:01  [34;42m520-Assignments[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:08  [34;42mAppData[0m
+lrwxrwxrwx 1 root root      34 Apr 16 21:08 [01;36m'Application Data'[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:48  [34;42mCode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mContacts[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mCookies[0m -> [34;42m/mnt/c/Users/marce/AppData/Local/Microsoft/Windows/INetCookies[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:15  [34;42mDocuments[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:26  [34;42mDownloads[0m
+drwxrwxrwx 1 root root     512 Apr 16 22:49  [34;42mEEP_520_Spring2021[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mFavorites[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:14  [34;42mIntelGraphicsProfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mLinks[0m
+lrwxrwxrwx 1 root root      32 Apr 16 21:08 [01;36m'Local Settings'[0m -> [34;42m/mnt/c/Users/marce/AppData/Local[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mMusic[0m
+lrwxrwxrwx 1 root root      28 Apr 16 21:08 [01;36m'My Documents'[0m -> [34;42m/mnt/c/Users/marce/Documents[0m
+-rwxrwxrwx 1 root root 2097152 Apr 16 23:14  [01;32mNTUSER.DAT[0m
+-rwxrwxrwx 1 root root   65536 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TM.blf[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000001.regtrans-ms[0m[K
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000002.regtrans-ms[0m[K
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mNetHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Network Shortcuts'[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:15  [34;42mOneDrive[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mPrintHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mRecent[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Recent[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'Saved Games'[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:14  [34;42mSearches[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mSendTo[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/SendTo[0m
+lrwxrwxrwx 1 root root      63 Apr 16 21:08 [01;36m'Start Menu'[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Start Menu'[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mTemplates[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Templates[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mVideos[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:55  [34;42mfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:21  [34;42mgetting-started[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mntuser.dat.LOG1[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG2[0m
+-rwxrwxrwx 1 root root      20 Apr 16 21:08  [01;32mntuser.ini[0m
+-rwxrwxrwx 1 root root     262 Apr 17 22:23  [01;32mtypescript[0m
+
+#12
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# rm -r files
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# ls -la
+total 4212
+drwxrwxrwx 1 root root     512 Apr 17 22:56  [0m[34;42m.[0m
+dr-xr-xr-x 1 root root     512 Apr 16 21:30  [01;34m..[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.aws[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.azure[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:41  [34;42m.bridge[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:32  [34;42m.docker[0m
+-rwxrwxrwx 1 root root      53 Apr 16 22:39  [01;32m.git-for-windows-updater[0m
+-rwxrwxrwx 1 root root      51 Apr 17 17:49  [01;32m.gitconfig[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.minikube[0m
+-rwxrwxrwx 1 root root    1133 Apr 17 18:53  [01;32m.viminfo[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.vs-kubernetes[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:38  [34;42m.vscode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'3D Objects'[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:01  [34;42m520-Assignments[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:08  [34;42mAppData[0m
+lrwxrwxrwx 1 root root      34 Apr 16 21:08 [01;36m'Application Data'[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:48  [34;42mCode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mContacts[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mCookies[0m -> [34;42m/mnt/c/Users/marce/AppData/Local/Microsoft/Windows/INetCookies[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:15  [34;42mDocuments[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:26  [34;42mDownloads[0m
+drwxrwxrwx 1 root root     512 Apr 16 22:49  [34;42mEEP_520_Spring2021[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mFavorites[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:14  [34;42mIntelGraphicsProfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mLinks[0m
+lrwxrwxrwx 1 root root      32 Apr 16 21:08 [01;36m'Local Settings'[0m -> [34;42m/mnt/c/Users/marce/AppData/Local[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mMusic[0m
+lrwxrwxrwx 1 root root      28 Apr 16 21:08 [01;36m'My Documents'[0m -> [34;42m/mnt/c/Users/marce/Documents[0m
+-rwxrwxrwx 1 root root 2097152 Apr 16 23:14  [01;32mNTUSER.DAT[0m
+-rwxrwxrwx 1 root root   65536 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TM.blf[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000001.regtrans-ms[0m[K
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000002.regtrans-ms[0m[K
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mNetHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Network Shortcuts'[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:15  [34;42mOneDrive[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mPrintHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mRecent[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Recent[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'Saved Games'[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:14  [34;42mSearches[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mSendTo[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/SendTo[0m
+lrwxrwxrwx 1 root root      63 Apr 16 21:08 [01;36m'Start Menu'[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Start Menu'[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mTemplates[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Templates[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mVideos[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:21  [34;42mgetting-started[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mntuser.dat.LOG1[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG2[0m
+-rwxrwxrwx 1 root root      20 Apr 16 21:08  [01;32mntuser.ini[0m
+-rwxrwxrwx 1 root root     262 Apr 17 22:23  [01;32mtypescript[0m
+
+#13
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# echo -n secretfile
+secretfile]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# ls -la
+total 4212
+drwxrwxrwx 1 root root     512 Apr 17 22:56  [0m[34;42m.[0m
+dr-xr-xr-x 1 root root     512 Apr 16 21:30  [01;34m..[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.aws[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.azure[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:41  [34;42m.bridge[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:32  [34;42m.docker[0m
+-rwxrwxrwx 1 root root      53 Apr 16 22:39  [01;32m.git-for-windows-updater[0m
+-rwxrwxrwx 1 root root      51 Apr 17 17:49  [01;32m.gitconfig[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.minikube[0m
+-rwxrwxrwx 1 root root    1133 Apr 17 18:53  [01;32m.viminfo[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.vs-kubernetes[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:38  [34;42m.vscode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'3D Objects'[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:01  [34;42m520-Assignments[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:08  [34;42mAppData[0m
+lrwxrwxrwx 1 root root      34 Apr 16 21:08 [01;36m'Application Data'[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:48  [34;42mCode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mContacts[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mCookies[0m -> [34;42m/mnt/c/Users/marce/AppData/Local/Microsoft/Windows/INetCookies[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:15  [34;42mDocuments[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:26  [34;42mDownloads[0m
+drwxrwxrwx 1 root root     512 Apr 16 22:49  [34;42mEEP_520_Spring2021[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mFavorites[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:14  [34;42mIntelGraphicsProfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mLinks[0m
+lrwxrwxrwx 1 root root      32 Apr 16 21:08 [01;36m'Local Settings'[0m -> [34;42m/mnt/c/Users/marce/AppData/Local[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mMusic[0m
+lrwxrwxrwx 1 root root      28 Apr 16 21:08 [01;36m'My Documents'[0m -> [34;42m/mnt/c/Users/marce/Documents[0m
+-rwxrwxrwx 1 root root 2097152 Apr 16 23:14  [01;32mNTUSER.DAT[0m
+-rwxrwxrwx 1 root root   65536 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TM.blf[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000001.regtrans-ms[0m[K
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000002.regtrans-ms[0m[K
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mNetHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Network Shortcuts'[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:15  [34;42mOneDrive[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mPrintHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mRecent[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Recent[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'Saved Games'[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:14  [34;42mSearches[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mSendTo[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/SendTo[0m
+lrwxrwxrwx 1 root root      63 Apr 16 21:08 [01;36m'Start Menu'[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Start Menu'[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mTemplates[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Templates[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mVideos[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:21  [34;42mgetting-started[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mntuser.dat.LOG1[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG2[0m
+-rwxrwxrwx 1 root root      20 Apr 16 21:08  [01;32mntuser.ini[0m
+-rwxrwxrwx 1 root root     262 Apr 17 22:23  [01;32mtypescript[0m
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# 
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# echo "It's a secrea[Kt!" > secretfile
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# ls -la
+total 4260
+drwxrwxrwx 1 root root     512 Apr 17 23:01  [0m[34;42m.[0m
+dr-xr-xr-x 1 root root     512 Apr 16 21:30  [01;34m..[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.aws[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.azure[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:41  [34;42m.bridge[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:32  [34;42m.docker[0m
+-rwxrwxrwx 1 root root      53 Apr 16 22:39  [01;32m.git-for-windows-updater[0m
+-rwxrwxrwx 1 root root      51 Apr 17 17:49  [01;32m.gitconfig[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.minikube[0m
+-rwxrwxrwx 1 root root    1133 Apr 17 18:53  [01;32m.viminfo[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.vs-kubernetes[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:38  [34;42m.vscode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'3D Objects'[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:01  [34;42m520-Assignments[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:08  [34;42mAppData[0m
+lrwxrwxrwx 1 root root      34 Apr 16 21:08 [01;36m'Application Data'[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:48  [34;42mCode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mContacts[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mCookies[0m -> [34;42m/mnt/c/Users/marce/AppData/Local/Microsoft/Windows/INetCookies[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:15  [34;42mDocuments[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:26  [34;42mDownloads[0m
+drwxrwxrwx 1 root root     512 Apr 16 22:49  [34;42mEEP_520_Spring2021[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mFavorites[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:14  [34;42mIntelGraphicsProfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mLinks[0m
+lrwxrwxrwx 1 root root      32 Apr 16 21:08 [01;36m'Local Settings'[0m -> [34;42m/mnt/c/Users/marce/AppData/Local[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mMusic[0m
+lrwxrwxrwx 1 root root      28 Apr 16 21:08 [01;36m'My Documents'[0m -> [34;42m/mnt/c/Users/marce/Documents[0m
+-rwxrwxrwx 1 root root 2097152 Apr 16 23:14  [01;32mNTUSER.DAT[0m
+-rwxrwxrwx 1 root root   65536 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TM.blf[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000001.regtrans-ms[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000002.regtrans-ms[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mNetHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Network Shortcuts'[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:15  [34;42mOneDrive[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mPrintHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mRecent[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Recent[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'Saved Games'[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:14  [34;42mSearches[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mSendTo[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/SendTo[0m
+lrwxrwxrwx 1 root root      63 Apr 16 21:08 [01;36m'Start Menu'[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Start Menu'[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mTemplates[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Templates[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mVideos[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:21  [34;42mgetting-started[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG1[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG2[0m
+-rwxrwxrwx 1 root root      20 Apr 16 21:08  [01;32mntuser.ini[0m
+-rwxrwxrwx 1 root root      15 Apr 17 23:01  [01;32msecretfile[0m
+-rwxrwxrwx 1 root root     262 Apr 17 22:23  [01;32mtypescript[0m
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# cat secretfile
+It's a secret!
+
+#14 
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# chmod 444 secretfile
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# ls -la
+total 4260
+drwxrwxrwx 1 root root     512 Apr 17 23:01  [0m[34;42m.[0m
+dr-xr-xr-x 1 root root     512 Apr 16 21:30  [01;34m..[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.aws[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:20  [34;42m.azure[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:41  [34;42m.bridge[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:32  [34;42m.docker[0m
+-rwxrwxrwx 1 root root      53 Apr 16 22:39  [01;32m.git-for-windows-updater[0m
+-rwxrwxrwx 1 root root      51 Apr 17 17:49  [01;32m.gitconfig[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.minikube[0m
+-rwxrwxrwx 1 root root    1133 Apr 17 18:53  [01;32m.viminfo[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:42  [34;42m.vs-kubernetes[0m
+drwxrwxrwx 1 root root     512 Apr 17 16:38  [34;42m.vscode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'3D Objects'[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:01  [34;42m520-Assignments[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:08  [34;42mAppData[0m
+lrwxrwxrwx 1 root root      34 Apr 16 21:08 [01;36m'Application Data'[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:48  [34;42mCode[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mContacts[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mCookies[0m -> [34;42m/mnt/c/Users/marce/AppData/Local/Microsoft/Windows/INetCookies[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:15  [34;42mDocuments[0m
+drwxrwxrwx 1 root root     512 Apr 17 22:26  [34;42mDownloads[0m
+drwxrwxrwx 1 root root     512 Apr 16 22:49  [34;42mEEP_520_Spring2021[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mFavorites[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:14  [34;42mIntelGraphicsProfiles[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mLinks[0m
+lrwxrwxrwx 1 root root      32 Apr 16 21:08 [01;36m'Local Settings'[0m -> [34;42m/mnt/c/Users/marce/AppData/Local[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mMusic[0m
+lrwxrwxrwx 1 root root      28 Apr 16 21:08 [01;36m'My Documents'[0m -> [34;42m/mnt/c/Users/marce/Documents[0m
+-rwxrwxrwx 1 root root 2097152 Apr 16 23:14  [01;32mNTUSER.DAT[0m
+-rwxrwxrwx 1 root root   65536 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TM.blf[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000001.regtrans-ms[0m
+-rwxrwxrwx 1 root root  524288 Apr 16 21:08  [01;32mNTUSER.DAT{e082e51c-2f5e-11eb-b1e6-004238c51e2a}.TMContainer00000000000000000002.regtrans-ms[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mNetHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Network Shortcuts'[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:15  [34;42mOneDrive[0m
+lrwxrwxrwx 1 root root      70 Apr 16 21:08  [01;36mPrintHood[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Printer Shortcuts'[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mRecent[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Recent[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13 [34;42m'Saved Games'[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:14  [34;42mSearches[0m
+lrwxrwxrwx 1 root root      59 Apr 16 21:08  [01;36mSendTo[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/SendTo[0m
+lrwxrwxrwx 1 root root      63 Apr 16 21:08 [01;36m'Start Menu'[0m -> [34;42m'/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Start Menu'[0m
+lrwxrwxrwx 1 root root      62 Apr 16 21:08  [01;36mTemplates[0m -> [34;42m/mnt/c/Users/marce/AppData/Roaming/Microsoft/Windows/Templates[0m
+drwxrwxrwx 1 root root     512 Apr 16 21:13  [34;42mVideos[0m
+drwxrwxrwx 1 root root     512 Apr 16 23:21  [34;42mgetting-started[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG1[0m
+-rwxrwxrwx 1 root root  570368 Apr 16 21:08  [01;32mntuser.dat.LOG2[0m
+-rwxrwxrwx 1 root root      20 Apr 16 21:08  [01;32mntuser.ini[0m
+-r-xr-xr-x 1 root root      15 Apr 17 23:01  [01;32msecretfile[0m
+-rwxrwxrwx 1 root root     262 Apr 17 22:23  [01;32mtypescript[0m
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# cat secretfile
+It's a secret!
+
+#15
+
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# echo "this is the tentative of add new line into the file" >> secretfile
+bash: secretfile: Permission denied
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# #as expected, we took out permissions [1@w[1@r[1@i[1@t[1@e[1@ [C[C[C[C[C[C[C[C[C[C[C[C i n c l [C [Ku d i n g [C t h e [C u s e r [C p e r m i s s i o n , [C s o [C  [A
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd 
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cw 
+e [C c a n n o t [C e d i t [C t h e [C f i l e 
+]0;root@MarceloUW: /mnt/c/Users/marceroot@MarceloUW:/mnt/c/Users/marce# exit
+exit
+
+Script done on 2021-04-17 23:06:36-07:00 [COMMAND_EXIT_CODE="1"]
