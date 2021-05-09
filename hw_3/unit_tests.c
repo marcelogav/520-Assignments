@@ -5,7 +5,7 @@
 
 #define X 1.2345
 
-
+extern DynamicArray * GlobalDestroy;
 namespace {
 
     TEST(DynamicArray, CreateAndDestroy) {
@@ -131,7 +131,7 @@ namespace {
 
 // Exercise 1 - Tests for Mathematical Operations
 
-  TEST(DynamicArray, MathOperations1) {
+  TEST(DynamicArrayEx, MathOperations1) {
         DynamicArray * da = DynamicArray_new();
         double x[] = {1,5,-3,21,6};
         for(int i=0;i<5;i++) {
@@ -143,25 +143,23 @@ namespace {
         ASSERT_EQ(DynamicArray_median(da),5);
         ASSERT_EQ(DynamicArray_sum(da),30);
         DynamicArray_destroy(da);
-        free(da);
-    } 
+        } 
 
   // test median of an array with even number of elements
-  TEST(DynamicArray, MathOperations2) {
+  TEST(DynamicArrayEx, MathOperations2) {
         DynamicArray * da = DynamicArray_new();
         double y[] = {3,8,4,2,12,15};
         for(int i=0;i<6;i++) {
                 DynamicArray_push(da, y[i]);
             }
         ASSERT_EQ(DynamicArray_median(da),6);
-        DynamicArray_destroy(da);  
-        free(da);        
+        DynamicArray_destroy(da);        
     }
 
 
 // Exercise 2 - _last / _first
 
-  TEST(DynamicArray, last_or_first) {
+  TEST(DynamicArrayEx, last_or_first) {
         DynamicArray * da = DynamicArray_new();
         double x[] = {1,5,-3,21,6,15,30,53};
         for(int i=0;i<8;i++) {
@@ -170,31 +168,31 @@ namespace {
         ASSERT_EQ(DynamicArray_first(da),1);  
         ASSERT_EQ(DynamicArray_last(da),53);
         DynamicArray_destroy(da);
-        free(da);
     } 
 
 
 // Exercise 3 - _copy
 
-  TEST(DynamicArray, copy_array) {
+  TEST(DynamicArrayEX, copy_array) {
         DynamicArray * da = DynamicArray_new();
         double x[] = {1,5,-3,21,6,15,30,53};
         for(int i=0;i<8;i++) {
                 DynamicArray_push(da, x[i]);
             }
-        ASSERT_EQ(DynamicArray_get(da,2),-3);
-        ASSERT_EQ(DynamicArray_get(da,5),15);
-        ASSERT_EQ(DynamicArray_get(da,1),5);
-        ASSERT_EQ(DynamicArray_get(da,7),53);
-        ASSERT_EQ(DynamicArray_size(da),8);
+        DynamicArray * y = DynamicArray_copy(da);    
+        ASSERT_EQ(DynamicArray_get(y,2),-3);
+        ASSERT_EQ(DynamicArray_get(y,5),15);
+        ASSERT_EQ(DynamicArray_get(y,1),5);
+        ASSERT_EQ(DynamicArray_get(y,7),53);
+        ASSERT_EQ(DynamicArray_size(y),8);
         DynamicArray_destroy(da);
-        free(da);
+        DynamicArray_destroy(y);
     } 
 
 
 // Exercise 4 - _range
 
-  TEST(DynamicArray, range) {
+  TEST(DynamicArrayEx, range) {
         DynamicArray * a = DynamicArray_range(0, 1, 0.1); 
         DynamicArray * b = DynamicArray_range(1.1, 2.0, 0.1); 
         ASSERT_NEAR(DynamicArray_get(a,3),0.3,0.01);
@@ -202,15 +200,13 @@ namespace {
         ASSERT_NEAR(DynamicArray_get(b,9),2,0.01);     
         ASSERT_NEAR(DynamicArray_get(b,1),1.2,0.01);
         DynamicArray_destroy(a);
-        free(a);
         DynamicArray_destroy(b);
-        free(b);
     } 
 
 
 // Exercise 5 - _concat
 
-  TEST(DynamicArray, concatenate) {
+  TEST(DynamicArrayEx, concatenate) {
         DynamicArray * a = DynamicArray_range(0, 1, 0.1);
         DynamicArray * b = DynamicArray_range(1.1, 2, 0.1);
         DynamicArray * c = DynamicArray_concat(a, b);
@@ -225,15 +221,12 @@ namespace {
         DynamicArray_destroy(a);
         DynamicArray_destroy(b);
         DynamicArray_destroy(c);
-        free(a);
-        free(b);
-        free(c);
     }
 
 
 // Exercise 6 - _take
 
-  TEST(DynamicArray, take_subarray) {
+  TEST(DynamicArrayEx, take_subarray) {
         DynamicArray * a = DynamicArray_range(1, 5, 1);
         DynamicArray * b = DynamicArray_take(a,2);   //{1,2}  
         DynamicArray * c = DynamicArray_take(a,-2);  //{4,5} 
@@ -253,26 +246,22 @@ namespace {
         DynamicArray_destroy(b);
         DynamicArray_destroy(c);
         DynamicArray_destroy(d);
-        free(a);
-        free(b);
-        free(c);
-        free(d);
     }
 
-// Exercise 7 - Test 
+// Exercise 7 - Test     THIS EXERCISE IS NOT WORKING, expect for method _num_arrays.
 
-  TEST(DynamicArray, Test_Ex_7) {
+  TEST(DynamicArrayEx, Test_Ex_7) {
     DynamicArray * a = DynamicArray_range(0, 1, 0.1);
     DynamicArray * b = DynamicArray_range(1.1, 2, 0.1);
     DynamicArray * c = DynamicArray_concat(a, b);
     ASSERT_EQ(DynamicArray_is_valid(a), 1);
-    ASSERT_EQ(DynamicArray_num_arrays(), 29);
-    //DynamicArray_destroy_all();
-    //ASSERT_EQ(DynamicArray_is_valid(a), 0);
-    //ASSERT_EQ(DynamicArray_num_arrays(), 0);
-    free(a);
-    free(b);
-    free(c);
+    ASSERT_EQ(DynamicArray_num_arrays(), 30);
+    
+    DynamicArray_destroy_all();
+
+    ASSERT_EQ(DynamicArray_is_valid(a), 0);
+    ASSERT_EQ(DynamicArray_is_valid(GlobalDestroy), 0);
+    ASSERT_EQ(DynamicArray_num_arrays(), 0);
     }
 
 

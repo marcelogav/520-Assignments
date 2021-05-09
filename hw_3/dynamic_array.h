@@ -10,8 +10,7 @@ typedef struct {
     double * buffer;
 } DynamicArray;
 
-extern int num_array;                 // introduce a global var to count total arrays created
-extern DynamicArray * destroy;        // introduce a global pointer to store used locations by created arrays
+
 
 /* Constructors / Destructors ************************************************/
 
@@ -87,7 +86,7 @@ int DynamicArray_num_arrays();
 
 /*! Destroys all arrays that have been constructed so far.
  */
-int DynamicArray_destroy_all();
+void DynamicArray_destroy_all();
 
 
 /*! Returns a sub-array of n elements. 

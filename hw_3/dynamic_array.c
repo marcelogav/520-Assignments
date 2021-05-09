@@ -4,9 +4,11 @@
 #include <string.h>
 #include <assert.h>
 #include <math.h>
+#include <stddef.h>
 
 
-int num_array = 0;          // introduce a global var to count total arrays created
+ int num_array = 0;                                          // introduce a global var to count total arrays created
+ DynamicArray * GlobalDestroy = DynamicArray_new();          // introduce a global pointer to store used locations by created arrays
 
 /* private functions *********************************************************/
 
@@ -41,11 +43,11 @@ static void extend_buffer ( DynamicArray * da ) {
 
     free(da->buffer);
     da->buffer = temp;
-
+    
     da->capacity = 2 * da->capacity;
     da->origin = new_origin;
     da->end = new_end;
-
+    
     return;
 
 }
@@ -120,7 +122,7 @@ void DynamicArray_set(DynamicArray * da, int index, double value) {
         extend_buffer(da);
     }
     da->buffer[index_to_offset(da, index)] = value;
-    if ( index >= DynamicArray_size(da) ) {
+     if ( index >= DynamicArray_size(da) ) {
         da->end = index_to_offset(da,index+1);
     }
 
@@ -167,6 +169,7 @@ double DynamicArray_pop_front(DynamicArray * da) {
 DynamicArray * DynamicArray_map(const DynamicArray * da, double (*f) (double)) {
     assert(da->buffer != NULL);
     DynamicArray * result = DynamicArray_new();
+
     for ( int i=0; i<DynamicArray_size(da); i++ ) {
         DynamicArray_set(result, i, f(DynamicArray_get(da, i)));
     }
@@ -305,9 +308,12 @@ DynamicArray * da_copy = DynamicArray_new();
 
 for (int i=0; i < DynamicArray_size(da); i++)
     { 
-    double x = DynamicArray_get(da, i);
-    da_copy->buffer[index_to_offset(da_copy,i)] = x;    
+    DynamicArray_push(da_copy,DynamicArray_get(da,i));   
     }
+
+for (int i=0; i < DynamicArray_size(da); i++) {                                       //Exercise 7
+DynamicArray_push(GlobalDestroy,da_copy->buffer[index_to_offset(da_copy,i)]);         //Exercise 7
+}
 return da_copy;
 }
 
@@ -318,6 +324,7 @@ DynamicArray * DynamicArray_range ( double a, double b, double step)
 {
 assert(b >= a);
 DynamicArray * da = DynamicArray_new(); 
+
 double value = a;
 DynamicArray_push(da, value);
 
@@ -326,6 +333,10 @@ DynamicArray_push(da, value);
         value = value + step;
         DynamicArray_push(da, value);
         }  
+
+for (int i=0; i < DynamicArray_size(da); i++) {                                       //Exercise 7
+DynamicArray_push(GlobalDestroy,da->buffer[index_to_offset(da,i)]);                   //Exercise 7
+}
 return da;
 }
 
@@ -347,7 +358,11 @@ for (int aux = 0; aux < (DynamicArray_size(a)+DynamicArray_size(b)) ; aux++)
         double value2 = DynamicArray_get(b, aux);
         DynamicArray_set(da, DynamicArray_size(a)+aux, value2);
         }
-   }   
+   }  
+
+for (int i=0; i < DynamicArray_size(da); i++) {                                       //Exercise 7
+DynamicArray_push(GlobalDestroy,da->buffer[index_to_offset(da,i)]);                   //Exercise 7
+}
 return da;
 }
 
@@ -356,17 +371,20 @@ return da;
 
 DynamicArray * DynamicArray_take(DynamicArray * da, int a)
 {
-DynamicArray * sub = DynamicArray_new();    
+DynamicArray * sub = DynamicArray_new(); 
+
 if (a >= 0) {
 sub = DynamicArray_subarray( da, 0, a);
 }
     else {
     sub = DynamicArray_subarray( da, (DynamicArray_size(da)+a), (DynamicArray_size(da)));    
     }
+
+for (int i=0; i < DynamicArray_size(da); i++) {                                       //Exercise 7
+DynamicArray_push(GlobalDestroy,da->buffer[index_to_offset(da,i)]);                   //Exercise 7
+}
 return sub;
 }
-
-
 
 
 // Exercise 7
@@ -375,6 +393,9 @@ For this item we have created a global variable and introduced a new counter whe
 array is created.
 We also introduced a new pointer to store all used addresses, which will be used by the 
 new method _destroy_all.
+
+***  I was not able to make Exercise 7 code works, despite the method _num_arrays which is the one working ******
+
 */
 
 int DynamicArray_num_arrays()
@@ -383,26 +404,31 @@ return num_array;
 }
 
 
-
-int DynamicArray_destroy_all()
+void DynamicArray_destroy_all()
 {
-
-
-
-
+for (int i = GlobalDestroy->origin; i <= GlobalDestroy->capacity; i++) 
+{
+GlobalDestroy->buffer[i] = 0;
 }
+//free(GlobalDestroy);     // this line will generate a segmentation fault (for _is_valid procedure)
 
+DynamicArray_print_debug_info(GlobalDestroy); // I created a global pointer (GlobalDestroy) with the expectation that it could help to de-allocate all arrays at once, but it's not working...
+
+return;
+}
 
 
 int DynamicArray_is_valid(const DynamicArray * da)
 {
-int confirm;    
-if (da->buffer != NULL) {
-    confirm = 1;
+double confirm;  
+
+if (da->buffer == NULL) {                   //this boolean comparison seems no to be working, as my GlobalDestroy is not helping to de-allocate used arrays
+    confirm = 0;
+    num_array = 0;
     }
     else {
-        confirm = 0;
-    }
+       confirm = 1;
+       }
 return confirm;
 
 }
