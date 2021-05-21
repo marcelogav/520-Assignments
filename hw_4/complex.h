@@ -5,28 +5,34 @@
 
 class Complex {
     public:
-    Complex(double x, double y) : re(x), im(y) {}
-    Complex(double a) : re(a), im(0) {};
+    Complex(double x, double y) : real(x), imag(y) {};
+    Complex(double a) : real(a), imag(0) {};
 
     double magnitude() const;
 
-    double re() const ;
-/*
-    double im() const ;
 
-    Complex conjugate(const Complex a) ;
+    double re() const;                 // HW4 - Exercise 5
 
-    Complex operator*(const Complex& a, const Complex& b);
+    double im() const;                 // HW4 - Exercise 5
 
-    Complex operator+(const Complex& a, const Complex& b);
-
-    bool operator==(const Complex& a, const Complex& b);
-
+    Complex conjugate() const ;        // HW4 - Exercise 5
+  
 
     private:
-    double re, im;
-} 
-*/
+    double real, imag;
+};
+
 bool operator<(const Complex& a, const Complex& b);
+
+
+
+Complex operator*(const Complex& a, const Complex& b);          // HW4 - Exercise 5
+
+Complex operator+(const Complex& a, const Complex& b);          // HW4 - Exercise 5
+
+bool operator==(const Complex& a, const Complex& b);            // HW4 - Exercise 5
+
+
+
 
 #endif

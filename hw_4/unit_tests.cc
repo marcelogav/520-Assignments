@@ -143,49 +143,37 @@ TEST(TypedArray,overload_operator) {
 }
 
 
-// Exercise 5
-/*
-    TEST(Ex5,Complex) {
-        Complex x(1,2), y(3);
-    }
-
-/*
-    template<typename T>
-    int compare(const T& x, const T& y) {
-        if ( x < y ) {
-            return -1;
-        } else if ( y < x ) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }    
-
-    TEST(Ex5,Templates) {
-        EXPECT_EQ(compare(1.0, 2.0), -1);
-        EXPECT_EQ(compare(Complex(5,4), Complex(-3,4)), 1);
-    }
+//HW4 - Exercise 5
 
     TEST(Ex5,Return_re) {
-        EXPECT_EQ(re(1.0, 2.0), 1.0);
-    }
+        Complex a = {1,2}; 
+        EXPECT_EQ(a.re(), 1);
+        }
 
     TEST(Ex5,Return_im) {
-        EXPECT_EQ(im(1.0, 2.0), 2.0);
+        Complex b = {1,2}; 
+        EXPECT_EQ(b.im(), 2);
     }
 
     TEST(Ex5,Conjugate) {
-        EXPECT_EQ(conjugate(1.0, 2.0), (1.0, -2.0));
+        Complex c = {2,3};
+        EXPECT_EQ(c.conjugate().im(),-3);
     }
 
-    TEST(Ex5, Overload*) {
-        EXPECT_EQ((1.0, 2.0)*(3.0, -1.0), (3.0, 5.0));
+    TEST(Ex5, Overload1) {
+        Complex a = {1,2};
+        Complex b = {3,-1};
+        Complex c = a*b;
+        EXPECT_EQ(c.re(),5);
+        EXPECT_EQ(c.im(),5);
+        EXPECT_EQ(a*b == c,1);
     }
 
-    TEST(Ex5, Overload+) {
-        EXPECT_EQ((1.0, 2.0)+(3.0, -1.0), (4.0, 1.0));
+    TEST(Ex5, Overload2) {
+        Complex a = {1,2};
+        Complex b = {3,-1};
+        Complex c = a+b;
+        EXPECT_EQ(a+b == c,1);
     }
-*/
-
 
 }
