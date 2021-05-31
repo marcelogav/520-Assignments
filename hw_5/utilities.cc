@@ -8,66 +8,82 @@
 #include <cmath>
 #include <algorithm>
 #include <string>
+#include <stdio.h>
+#include <stdlib.h>
 #include "utilities.h"
+#include <cstring>
 
+using namespace std;
 
-void sort_by_magnitude (std::vector<double> v) {
+//HW5 - Exercise 1
 
-struct test {
-bool operator()(double x, double y) {return abs(x)<abs(y);}
-} mytest;
+vector<double> sort_by_magnitude (vector<double> v) {
 
-sort(v.begin(), v.end(), mytest);
+sort(v.begin(), v.end(), [](double x, double y) {return sqrt(x*x)<sqrt(y*y);} );
 
+return v;
 }
-
-
-
-
-
-
-
 
 /*
-double Complex::magnitude() const {
-    return sqrt(real*real + imag*imag);
-}
 
-bool operator<(const Complex& a, const Complex& b) {
-    return a.magnitude() < b.magnitude();
-}
+// HW5 - Exercise 2.1
+TypedArray<TypedArray<double>> read_matrix_csv(const string path) {
 
-// Exercise 5 ****************************************************
-double Complex::re() const {
-    return real;
-}
+TypedArray<TypedArray<double>> m;
+ifstream file;
+file.open(path);
 
-double Complex::im() const {
-    return imag;
-} 
+if (file.is_open()) {printf("yes");} else {printf("no");}
 
-Complex Complex::conjugate() const {
-    Complex b = {real,-imag};
-    return b;
-}
+cout << file << "\n";
 
-Complex operator*(const Complex& a, const Complex& b) {
-    Complex c = {(a.re()*b.re()-a.im()*b.im()),(a.re()*b.im()+b.re()*a.im())};
-    return c;
-}
+    for(int i = 0; i < 10; i++)  {
+        std::string line;
+        std::getline(file, line);
+        if ( !file.good() ) {
+            throw std::invalid_argument ("data file cannot be converted into a matrix");
+            }
+        std::stringstream line_to_split (line);
 
-Complex operator+(const Complex& a, const Complex& b) {
-    Complex c = {(a.re()+b.re()), (a.im()+b.im())};
-    return c;
-}
-
-bool operator==(const Complex& a, const Complex& b) {
-      if ( a.re() != b.re() ) {
-        return false;
-       }
-        if ( a.im() != b.im() ) {
-            return false;
+        for (int j = 0; j < 10; j++) {
+            std::string value;
+            std::getline(line_to_split, value, ',');
+            if ( !line_to_split.good() ) {
+                throw std::invalid_argument ("data file cannot be converted into a matrix");
+                }
+            m.get(i).set(j, stod(value));
         }
-    return true;
+    }
+    return m;
 }
+
+
+
+//HW5 - Exercise 2.2
+void write_matrix_csv(const TypedArray<TypedArray<double>> &matrix, const string path) {
+FILE *file;
+file = fopen("test2.csv", "w+");
+
+for (int i= 0; i<10 ; i++) {
+    for (int j=0; j<10; j++) {
+        fprintf(file,to_string(matrix.get(i).get(j)) );
+        if (j<10) {
+            fprintf(file,",");
+        }
+    }
+    fprintf(file,"\n");    
+}
+fclose(file);
+}
+
+/*
+// HW5  = Exercise 2.3
+map<string, int> occurrence_map(const string path) {
+
+    
+}
+
 */
+
+
+

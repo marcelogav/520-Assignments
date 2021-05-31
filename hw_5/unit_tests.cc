@@ -13,23 +13,51 @@
 #include <cmath>
 #include <algorithm>
 #include <string>
-#include <utilities.cc>
+#include <utilities.h>
 
 namespace {
 
 using namespace std;
 
+
 TEST(HW5, SortByMagnitude) {
 
-std::vector<double> v = {-30, 1, 3, 5, -10, 8, -12, -6};
+vector<double> v = {-30, 1, 3, 5, -10, 8, -12, -6};
+vector<double> res = sort_by_magnitude(v);
 
-std::vector<double> t = v.sort_by_magnitude();
+//checking result:
+   std::cout << "After sort, the vector ordered by magnitude is : ";
+   for(int i=0; i < res.size(); i++) {
+        std::cout << res.at(i) << ' ';
+   }
+}
 
-//cout << t << "\n";
 
-EXPECT_DOUBLE_EQ(t.end(),30);
+TEST(HW5, ReadMatrix) {
+
+TypedArray<TypedArray<double>> mat = read_matrix_csv ("c:/Users/marce/OneDrive/Desktop/test1.csv:/app/test1.csv");
+
+std::cout << mat << "\n";
 
 }
+
+
+TEST(HW5, WriteMatrix) {
+
+TypedArray<TypedArray<double>> m;
+    for (int i=0; i<10; i++) {
+        for (int j=0; j<10; j++) {
+        m.get(i).set(j, i+j+1);
+        }
+    }
+ 
+cout << m << "\n";
+
+write_matrix_csv(m, "test2.csv");
+
+}
+
+
 
 }
 
