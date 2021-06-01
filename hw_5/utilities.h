@@ -13,6 +13,7 @@
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
+#include <map>
 
 using namespace std;
 template <typename ElementType>                      // ElementType is the type variable
@@ -137,14 +138,14 @@ void TypedArray<ElementType>::set(int index, ElementType value) {
 template <typename ElementType>
 std::ostream &operator<<(std::ostream &os, TypedArray<ElementType> &array)
 {
-    os << '[';
+    //os << '[';
     for (int i=0; i<array.size(); i++ ) {
         os << array.get(i);
         if ( i < array.size() - 1 ) {
             os << ",";
         }
     }
-    os << ']';
+    //os << ']';
     return os;
 }
 
@@ -195,17 +196,16 @@ void TypedArray<ElementType>::extend_buffer() {
  // HW5 - Exercise 1
  vector<double> sort_by_magnitude (vector<double> v);
 
-
+/*
 // HW5 - Exercise 2.1
 TypedArray<TypedArray<double>> read_matrix_csv(const string path);
+*/
 
 //HW5 - Exercise 2.2
 void write_matrix_csv(const TypedArray<TypedArray<double>> &matrix, const string path);
-/*
+
 // HW5  = Exercise 2.3
 map<string, int> occurrence_map(const string path);
-
-*/
 
 
 #endif

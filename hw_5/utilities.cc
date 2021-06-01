@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include "utilities.h"
 #include <cstring>
+#include <map>
 
 using namespace std;
 
@@ -25,65 +26,116 @@ return v;
 }
 
 /*
-
 // HW5 - Exercise 2.1
 TypedArray<TypedArray<double>> read_matrix_csv(const string path) {
 
 TypedArray<TypedArray<double>> m;
-ifstream file;
-file.open(path);
 
-if (file.is_open()) {printf("yes");} else {printf("no");}
+string *buffer;
+TypedArray<string> temp;
+fstream file_source(path, ios::in);
 
-cout << file << "\n";
-
-    for(int i = 0; i < 10; i++)  {
-        std::string line;
-        std::getline(file, line);
-        if ( !file.good() ) {
-            throw std::invalid_argument ("data file cannot be converted into a matrix");
-            }
-        std::stringstream line_to_split (line);
-
-        for (int j = 0; j < 10; j++) {
-            std::string value;
-            std::getline(line_to_split, value, ',');
-            if ( !line_to_split.good() ) {
-                throw std::invalid_argument ("data file cannot be converted into a matrix");
-                }
-            m.get(i).set(j, stod(value));
+if ( !file_source ) {
+        throw std::invalid_argument ("data file cannot be converted into a matrix");
         }
-    }
-    return m;
-}
 
-
-
-//HW5 - Exercise 2.2
-void write_matrix_csv(const TypedArray<TypedArray<double>> &matrix, const string path) {
-FILE *file;
-file = fopen("test2.csv", "w+");
-
-for (int i= 0; i<10 ; i++) {
-    for (int j=0; j<10; j++) {
-        fprintf(file,to_string(matrix.get(i).get(j)) );
-        if (j<10) {
-            fprintf(file,",");
+else {       
+    int i=0; 
+    while (file_source >> buffer) {
+        for (auto i = 0; i < m.size(); i++) {
+            m.set(i,atof(buffer));
         }
+        
     }
-    fprintf(file,"\n");    
-}
-fclose(file);
-}
 
-/*
-// HW5  = Exercise 2.3
-map<string, int> occurrence_map(const string path) {
+}  
 
-    
+return m;
 }
 
 */
+
+//HW5 - Exercise 2.2
+void write_matrix_csv(const TypedArray<TypedArray<double>> &matrix, const string path) {
+fstream file_output (path, ios::out | ios::app);
+
+TypedArray<TypedArray<double>> temp = matrix;
+
+     for (int i=0; i < temp.size(); i++) {
+         file_output <<  temp.get(i);
+         file_output << "\n";
+     }
+}
+
+
+
+// HW5  = Exercise 2.3
+map<string, int> occurrence_map(const string path) {
+
+vector<string> words;
+string word;
+vector<string> valid_keys;
+vector<string> invalid_strings;
+string valid = "abcdefghijklmnopqrstuvwxyz0123456789'";
+string invalid = "`~!@#$%^&*()_-+=[]|{};<>?/";
+string punctuation = ",.:;!()\"";
+
+fstream file_source(path, ios::in);
+
+    while(file_source >> word) {
+        for (string::iterator i = word.begin(); i != word.end(); i++) {
+            *i = tolower(*i);
+            }
+            while (count(punctuation.begin(),punctuation.end(),word.front())>0) {
+                word.erase(0,1);
+            }
+            while (count(punctuation.begin(),punctuation.end(),word.back())>0) {
+                word.pop_back();
+            }
+        words.push_back(word);
+    }
+    for (int index = 0; index < words.size(); index++) {
+        int inv = 0;
+        for (char ch : words[index]) {
+           inv = inv + count(invalid.begin(), invalid.end(),ch); 
+            }
+            if (inv==0) {
+                valid_keys.push_back(words[index]);
+            }
+            else {
+                invalid_strings.push_back(words[index]);
+            }
+    }
+     
+    sort(valid_keys.begin(),valid_keys.end());
+    valid_keys.erase(unique(valid_keys.begin(), valid_keys.end()),valid_keys.end());
+
+    for (auto i = valid_keys.begin(); i < valid_keys.size(); i++) {
+    int f[i] = count(words.begin(), words.end(), valid_keys[i]);
+    //auto result = map <valid_keys, function> ;
+    cout << f << "\n";
+    }
+
+
+fstream file_output ("/source/map_output.txt", ios::out | ios::app);
+
+vector<string> temp;
+temp = valid_keys;
+        file_output << "Valid_keys:" << "\n!";
+        for(int i=0;i<valid_keys.size();i++) {
+         file_output << valid_keys[i];
+         file_output << "\n";
+     }
+
+return result;
+
+
+} 
+
+
+
+
+
 
 
 
