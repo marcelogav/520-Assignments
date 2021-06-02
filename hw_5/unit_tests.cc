@@ -56,7 +56,7 @@ TEST(HW5, WriteMatrix) {
 
 TEST(HW5, MAP) {
       
-        occurrence_map("/source/testFile_MapFunction.txt");
+        occurrence_map("/source/MapFunction_inputFile.txt");
 
 // check ..._output.txt for result        
 }

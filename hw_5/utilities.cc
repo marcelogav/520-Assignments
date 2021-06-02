@@ -72,6 +72,7 @@ TypedArray<TypedArray<double>> temp = matrix;
 // HW5  = Exercise 2.3
 map<string, int> occurrence_map(const string path) {
 
+map<string, int> results;
 vector<string> words;
 string word;
 vector<string> valid_keys;
@@ -103,33 +104,49 @@ fstream file_source(path, ios::in);
                 valid_keys.push_back(words[index]);
             }
             else {
-                invalid_strings.push_back(words[index]);
+                invalid_strings.push_back(words[index]); 
             }
     }
-     
+
     sort(valid_keys.begin(),valid_keys.end());
     valid_keys.erase(unique(valid_keys.begin(), valid_keys.end()),valid_keys.end());
 
-    for (auto i = valid_keys.begin(); i < valid_keys.size(); i++) {
-    int f[i] = count(words.begin(), words.end(), valid_keys[i]);
-    //auto result = map <valid_keys, function> ;
-    cout << f << "\n";
+    for (int index = 0; index < valid_keys.size(); index++) {
+    results.insert(make_pair(valid_keys[index], (count(words.begin(), words.end(), valid_keys[index])))); 
     }
 
 
-fstream file_output ("/source/map_output.txt", ios::out | ios::app);
+// Outputs
 
-vector<string> temp;
-temp = valid_keys;
-        file_output << "Valid_keys:" << "\n!";
-        for(int i=0;i<valid_keys.size();i++) {
-         file_output << valid_keys[i];
-         file_output << "\n";
-     }
+cout << "Stored text:" << "\n";
+for (int index = 0; index < words.size(); index++) {
+    cout << words[index] << " ";
+    }
+    cout << "\n" << "\n";
 
-return result;
+cout << "Valid Keys:" << "\n";
+for (int index = 0; index < valid_keys.size(); index++) {
+    cout << valid_keys[index] << " ";
+    }
+    cout << "\n" << "\n";
 
+cout << "Invalid strings:" << "\n";
+for (int index = 0; index < invalid_strings.size(); index++) {
+    cout << invalid_strings[index] << " ";
+    }
+    cout << "\n" << "\n";
 
+fstream file_output ("/source/MapFunction_output.txt", ios::out | ios::app);
+
+cout << "Map result:" << "\n";
+
+map<string,int>::iterator it;
+    for(it = results.begin(); it != results.end(); it++) {
+        cout << it->first << " => " << it -> second << "\n";
+        file_output << it->first << " => " << it -> second << "\n";
+    }
+
+return results ;
 } 
 
 
