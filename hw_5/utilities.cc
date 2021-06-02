@@ -1,4 +1,5 @@
 #include <iostream>
+#include <istream>
 #include <math.h>
 #include <assert.h>
 #include <stdexcept>
@@ -25,35 +26,41 @@ sort(v.begin(), v.end(), [](double x, double y) {return sqrt(x*x)<sqrt(y*y);} );
 return v;
 }
 
-/*
+
 // HW5 - Exercise 2.1
 TypedArray<TypedArray<double>> read_matrix_csv(const string path) {
 
 TypedArray<TypedArray<double>> m;
+double num;
+string line, word, temp;
+stringstream lineStream;
 
-string *buffer;
-TypedArray<string> temp;
+
 fstream file_source(path, ios::in);
 
 if ( !file_source ) {
         throw std::invalid_argument ("data file cannot be converted into a matrix");
         }
 
-else {       
-    int i=0; 
-    while (file_source >> buffer) {
-        for (auto i = 0; i < m.size(); i++) {
-            m.set(i,atof(buffer));
+else {  
+        int i=0;
+        while (getline (file_source, line)) {
+            
+            lineStream.str(line);
+
+            int j = 0;
+            while ( getline(lineStream, word, ',') ) {
+                num = stod(word);
+                m.get(i).set(j,num);
+                j++;
+            }
+            lineStream.clear();
+            i++;
         }
-        
     }
-
-}  
-
 return m;
 }
 
-*/
 
 //HW5 - Exercise 2.2
 void write_matrix_csv(const TypedArray<TypedArray<double>> &matrix, const string path) {
@@ -69,7 +76,7 @@ TypedArray<TypedArray<double>> temp = matrix;
 
 
 
-// HW5  = Exercise 2.3
+// HW5 - Exercise 2.3
 map<string, int> occurrence_map(const string path) {
 
 map<string, int> results;
@@ -116,7 +123,7 @@ fstream file_source(path, ios::in);
     }
 
 
-// Outputs
+// Outputs Ex2.3
 
 cout << "Stored text:" << "\n";
 for (int index = 0; index < words.size(); index++) {
