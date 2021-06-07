@@ -7,7 +7,6 @@ using std::deque;
 int numUpd = 0;
 double sum = 0;
 double running_average = 0;
-Channel("link",10);
 
 void Filter::update() {
     numUpd++;
