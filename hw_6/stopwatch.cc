@@ -1,6 +1,8 @@
 #include "stopwatch.h"
 #include <iostream>
 #include <ratio>
+#include <chrono>
+#include <ostream>
 
 using namespace elma;
 
@@ -9,7 +11,7 @@ using namespace elma;
     void init() {}
 
     void start() {                                  //starts the timer
-            high_resolution_clock::time_point t0 = 0;
+            high_resolution_clock::time_point t0 = high_resolution_clock::now();
         }
 
     void update() {}
@@ -19,7 +21,7 @@ using namespace elma;
         }
 
     void reset() {                                  //sets stopwatch to zero
-            high_resolution_clock::time_point t = milliseconds_type::zero();
+            high_resolution_clock::time_point t0 = high_resolution_clock::now();
         }                             
 
     double total = (t - t0).count();
@@ -27,21 +29,21 @@ using namespace elma;
     double get_minutes() {                          // number of minutes counted, as a double
             typedef duration<double,std::ratio<60*1000*1000*1000,1>> mins;
             auto y = mins(total);
-            std::cout << y << "minutes " << "\n";
+            std::cout << y.count() << "minutes " << "\n";
     return y;    
     }
 
     double get_seconds() {                           // number of seconds counted, as a double
             typedef duration<double,std::ratio<1000*1000*1000,1>> secs;
             auto y = secs(total);
-            std::cout << y << "seconds " << "\n";
+            std::cout << y.count() << "seconds " << "\n";
     return y;    
     }
         
     double get_milliseconds(){                      // number of milliseconds counted, as a double
             typedef duration<double,std::ratio<1000*1000>> mili;
             auto y = mili(total);
-            std::cout << y << "miliseconds " << "\n";
+            std::cout << y.count() << "miliseconds " << "\n";
     return y;    
     }
 
