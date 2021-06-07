@@ -1,5 +1,6 @@
 #include "stopwatch.h"
 #include <iostream>
+#include <ratio>
 
 using namespace elma;
 
