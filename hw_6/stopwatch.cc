@@ -19,7 +19,7 @@ using namespace elma;
         }
 
     void reset() {                                  //sets stopwatch to zero
-            high_resolution_clock::time_point t = 0;
+            high_resolution_clock::time_point t = milliseconds_type::zero();
         }                             
 
     double total = (t - t0).count();
